@@ -1,0 +1,21 @@
+
+<phpunit bootstrap='./config.php'>
+  <testsuites>
+    <testsuite name="calculadora">
+    	<directory>tests/testsCalculadora</directory>
+    </testsuite>
+
+    <testsuite name="providers">
+    	<directory>tests/testsProviders</directory>
+    </testsuite>
+
+    <testsuite name="cuentas">
+      <directory>tests/testsCuentasBancarias</directory>
+    </testsuite>
+
+    <testsuite name="todo">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
+
+</phpunit>

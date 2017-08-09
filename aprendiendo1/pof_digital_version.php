@@ -2,7 +2,7 @@
 	require_once 'ConexionRepositorio.php';
 
 	// La clase que maneja la relacion con la bdd
-	class digital_version_conexionRepositorio extends ConexionRepositorio {
+	class pof_digital_version_conexionRepositorio extends ConexionRepositorio {
 		
 		public function __construct(PDO $connection = null) {
 			parent::__construct($connection);
@@ -22,7 +22,7 @@
 	}
 
 	// La clase para los objetos que vamos a guardar en la tabla digital_version
-	class digital_version {
+	class pof_digital_version {
 		private $escuela;
 		private $version;
 		private $fecha;
@@ -39,7 +39,7 @@
 		}
 
 		public function profile() {
-			return sprintf('Escuela: %s | Version: %d | Fecha: %s | Operador: %d | Ciclo lectivo: %d <br>', 
+			return sprintf('Escuela: %s | Version: %d | Fecha: %s | Operador: %d | Ciclo lectivo: %d', 
 				$this->escuela, $this->version, $this->fecha, $this->operador, $this->ciclo_lectivo);
 		}
 

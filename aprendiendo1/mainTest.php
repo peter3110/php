@@ -3,7 +3,7 @@
 	# (para ayuda) ver http://slashnode.com/pdo-for-elegant-php-database-access/
 	
 	use PHPUnit\Framework\TestCase;
-	require_once 'digital_version.php';
+	require_once 'pof_digital_version.php';
 	require_once 'ConexionRepositorio.php';
 	
 	class mainTest extends TestCase {
