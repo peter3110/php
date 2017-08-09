@@ -10,7 +10,7 @@
 		}
 
 		public function __toString() {
-			return ((string) $this->cantidad) . $this->moneda;
+			return $this->moneda . ((string) $this->cantidad);
 		}
 
 		public function getCantidad() {
@@ -21,21 +21,14 @@
 			return $this->moneda;
 		}
 
-		public function enPesos17() {
-			if($this->moneda == '$') { return $this; }
+		public function getCantidadEnPesos17() {
+			if($this->moneda == '$') { return $this->cantidad; }
 			if($this->moneda == 'USD$') { 
-				return new Dinero(17 * $this->cantidad, 'USD$'); 
+				return 17 * $this->cantidad; 
+			} else {
+				throw new Exception('error: la moneda solo puede ser $ o USD$');
 			}
-		}
 
-		public function sumarMismaMoneda($otraSumaDeDinero) {
-			$this->cantidad = $this->cantidad + getCantidad($otraSumaDeDinero);
-			$this->moneda = $this->moneda;
-		}
-
-		public function restar($otraSumaDeDinero) {
-			$this->cantidad = $this->cantidad - getCantidad($otraSumaDeDinero);
-			return $this;
 		}
 	}
 ?>

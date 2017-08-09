@@ -30,16 +30,16 @@
 		}
 
 		public function getSaldoEnPesos17() {
-			return $this->saldo->enPesos17()->getCantidad();
+			return $this->saldo->getCantidadEnPesos17();
 		}
 
 		public function depositar($cantidadDeDinero) {
-			$this->saldo = $this->calculadora->sumar($this->saldo, $cantidadDeDinero);
+			$this->saldo = $this->calculadora->sumarAPesos($this->saldo, $cantidadDeDinero);
 			return $this;
 		}
 
 		public function extraer($cantidadDeDinero) {
-			$resultado = $this->calculadora->restar($this->saldo, $cantidadDeDinero);
+			$resultado = $this->calculadora->restarAPesos($this->saldo, $cantidadDeDinero);
 			if($resultado->getCantidad() >= 0) {
 				$this->saldo = $resultado;
 				return $this;

@@ -1,17 +1,25 @@
 
 <phpunit bootstrap='./config.php'>
   <testsuites>
+  <testsuite name="parser">
+    <directory>tests/testsUnidad/testsParser</directory>
+  </testsuite>
+
     <testsuite name="calculadora">
-    	<directory>tests/testsCalculadora</directory>
+    	<directory>tests/testsUnidad/testsCalculadora</directory>
     </testsuite>
 
     <testsuite name="providers">
-    	<directory>tests/testsProviders</directory>
+    	<directory>tests/testsUnidad/testsProviders</directory>
     </testsuite>
 
     <testsuite name="cuentas">
-      <directory>tests/testsCuentasBancarias</directory>
+      <directory>tests/testsUnidad/testsCuentasBancarias</directory>
     </testsuite>
+
+    <testsuite name="integracion">
+        <directory>tests/testsIntegracion</directory>
+      </testsuite>
 
     <testsuite name="todo">
       <directory>tests</directory>

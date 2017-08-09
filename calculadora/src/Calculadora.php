@@ -6,13 +6,14 @@
 	class Calculadora {
 		// tiene que poder operar con Dinero - diferentes monedas (?)
 
-		public function sumar($x, $y) {
-			return new Dinero($x->enPesos17()->sumarMismaMoneda($y->enPesos17()));
+		public function sumarAPesos($x, $y) {
+			// asume que son pesos
+			return new Dinero($x->getCantidadEnPesos17() + $y->getCantidadEnPesos17(), '$');
 		}
 
-		public function restar($x, $y) {
+		public function restarAPesos($x, $y) {
 			//$this->setFueUtilizada();
-			return new Dinero(0);
+			return new Dinero($x->getCantidadEnPesos17() - $y->getCantidadEnPesos17(), '$');
 		}
 		
 	}
